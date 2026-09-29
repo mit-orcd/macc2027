@@ -1,0 +1,322 @@
+/* Project MACC — stand-alone site styles */
+
+:root {
+  /* ORCD brand: logo teal #36ab9c, nav-band teal #4da59e; --accent is a
+     darkened teal so small text and links keep readable contrast on white. */
+  --orcd-teal: #36ab9c;
+  --orcd-band: #4da59e;
+  --accent: #1f756b;
+  --accent-dark: #175c54;
+  --ink: #1c1c1e;
+  --ink-soft: #4a4a4f;
+  --paper: #ffffff;
+  --paper-tint: #f2f8f7;
+  --rule: #dbe8e6;
+  --max-width: 60rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header / nav */
+
+.site-header {
+  background: var(--paper);
+}
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.masthead .logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.brand .macc { color: var(--accent); }
+
+nav.site-nav {
+  background: var(--orcd-band);
+}
+
+nav.site-nav .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 2rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+nav.site-nav a {
+  text-decoration: none;
+  color: #06231f;
+  font-weight: 700;
+  font-size: 1rem;
+  padding-bottom: 2px;
+  border-bottom: 3px solid transparent;
+}
+
+nav.site-nav a:hover { color: #fff; }
+
+nav.site-nav a.current { border-bottom-color: #06231f; }
+
+nav.site-nav a.nav-signup {
+  margin-left: auto;
+  background: #fff;
+  color: var(--accent);
+  padding: 0.25rem 0.9rem 0.3rem;
+  border-radius: 4px;
+  border-bottom: none;
+}
+
+nav.site-nav a.nav-signup:hover { color: var(--accent-dark); }
+
+/* Hero */
+
+.hero {
+  background: var(--paper-tint);
+  border-bottom: 1px solid var(--rule);
+  padding: 3rem 0 2.75rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.01em;
+}
+
+.hero .subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+}
+
+.hero .dates {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.15rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero .lede {
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  margin: 0.25rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
+}
+
+.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.btn-secondary:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
+
+.btn-big { font-size: 1.2rem; padding: 0.85rem 2.25rem; }
+
+/* Sections */
+
+main section { padding: 2.25rem 0 0.5rem; }
+
+main h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
+}
+
+main h3 { font-size: 1.15rem; margin: 1.25rem 0 0.4rem; }
+
+.question {
+  border-left: 4px solid var(--accent);
+  background: var(--paper-tint);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+
+/* Prize cards */
+
+.prize-grand {
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  background: var(--paper-tint);
+  padding: 1.75rem 1.75rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  text-align: center;
+}
+
+.prize-grand .amount,
+.prize-card .amount {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.15;
+}
+
+.prize-card .amount { font-size: 1.6rem; }
+
+.prize-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.prize-card {
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.15rem 1.1rem;
+  background: var(--paper);
+}
+
+.prize-card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.prize-card p { margin: 0.35rem 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* Timeline table */
+
+table.timeline {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+}
+
+table.timeline th,
+table.timeline td {
+  text-align: left;
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+table.timeline th {
+  white-space: nowrap;
+  color: var(--accent);
+  font-weight: 700;
+  width: 11rem;
+}
+
+/* Signup page */
+
+.signup-cta {
+  text-align: center;
+  background: var(--paper-tint);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 2.25rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.signup-cta p.small { font-size: 0.9rem; color: var(--ink-soft); margin-top: 1rem; }
+
+/* Footnotes */
+
+a.fn-ref { text-decoration: none; }
+a.fn-ref sup { font-size: 0.75em; }
+
+.footnotes {
+  margin-top: 2.75rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.footnotes hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  width: 8rem;
+  margin: 0 0 0.6rem;
+}
+
+.footnotes p { margin: 0.25rem 0; }
+
+.footnotes .fn-back { text-decoration: none; }
+
+/* Footer */
+
+.site-footer {
+  margin-top: 3rem;
+  border-top: 4px solid var(--orcd-band);
+  background: var(--paper-tint);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.site-footer a { color: var(--ink-soft); }
+
+ul.tight { margin: 0.5rem 0 1rem; padding-left: 1.4rem; }
+ul.tight li { margin-bottom: 0.4rem; }
+
+@media (max-width: 40rem) {
+  .masthead { flex-direction: column; align-items: flex-start; }
+  table.timeline th { width: auto; }
+}
